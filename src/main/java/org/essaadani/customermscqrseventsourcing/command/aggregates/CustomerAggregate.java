@@ -24,7 +24,8 @@ public class CustomerAggregate {
     private String lastName;
     private Date birthDate;
     private String cin;
-    private Date timestamp;
+    private Date createdAt;
+    private Date updatedAt;
 
     public CustomerAggregate() {
     }
@@ -83,13 +84,13 @@ public class CustomerAggregate {
         this.lastName = event.getLastName();
         this.birthDate = event.getBirthDate();
         this.cin = event.getCin();
-        this.timestamp = event.getTimestamp();
+        this.createdAt = event.getTimestamp();
     }
 
     @EventSourcingHandler
     public void on(CustomerUpdatedEvent event){
         this.firstName = event.getFirstName();
         this.lastName = event.getLastName();
-        this.timestamp = event.getTimestamp();
+        this.updatedAt = event.getTimestamp();
     }
 }
