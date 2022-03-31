@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.Date;
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
+import java.util.stream.Stream;
 
 @RestController
 @RequestMapping("/commands/customers")
@@ -47,6 +48,11 @@ public class CustomerCommandController {
         ));
 
         return commandResponse;
+    }
+
+    @GetMapping("/eventStore/{customerId}")
+    public Stream eventStore(@PathVariable String customerId){
+        return eventStore.readEvents(customerId).asStream();
     }
 
     // exception handler
