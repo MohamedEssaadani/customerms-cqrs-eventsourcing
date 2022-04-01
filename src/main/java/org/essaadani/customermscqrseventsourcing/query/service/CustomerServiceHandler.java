@@ -1,4 +1,4 @@
-package org.essaadani.customermscqrseventsourcing.query.controllers;
+package org.essaadani.customermscqrseventsourcing.query.service;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

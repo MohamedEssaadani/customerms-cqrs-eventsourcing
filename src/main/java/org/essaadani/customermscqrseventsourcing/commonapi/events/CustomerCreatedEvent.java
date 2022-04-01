@@ -1,6 +1,5 @@
 package org.essaadani.customermscqrseventsourcing.commonapi.events;
 
-import lombok.Data;
 import lombok.Getter;
 
 import java.util.Date;
